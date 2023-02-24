@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PostDialogComponent } from './post-dialog/post-dialog.component';
+import { PostService } from './post.service';
 import { Post } from './posts';
 
 @Component({
@@ -10,16 +11,16 @@ import { Post } from './posts';
 })
 export class AppComponent {
   title = 'Album_Fotos_Angular';
-  public posts:Post[]=[
-    new Post('Paulo','Meu Post', 'teste de Amanhã', 'Joao@gmail.com', "Estava a toa na pista o meu amor me chamou"),
-    new Post('João','Meu Post', 'teste de Amanhã', 'Joao@gmail.com', "Estava a toa na pista o meu amor me chamou"),
-    new Post('Marcelo','Meu Post', 'teste de Amanhã', 'Joao@gmail.com', "Estava a toa na pista o meu amor me chamou"),    
-    new Post('Paulo','Meu Post', 'teste de Amanhã', 'Joao@gmail.com', "Estava a toa na pista o meu amor me chamou"),
-    new Post('João','Meu Post', 'teste de Amanhã', 'Joao@gmail.com', "Estava a toa na pista o meu amor me chamou"),
-    new Post('Marcelo','Meu Post', 'teste de Amanhã', 'Joao@gmail.com', "Estava a toa na pista o meu amor me chamou"),
-  ];
+  public posts:Post[]=[];
 
-  constructor(public dialog: MatDialog){}
+  constructor(
+    private dialog: MatDialog,
+    private postService: PostService
+    ){}
+  
+  ngOnInit(){
+    this.posts = this.postService.posts;
+  }
 
   openDialog(){
     const dialogRef = this.dialog.open(PostDialogComponent, {
