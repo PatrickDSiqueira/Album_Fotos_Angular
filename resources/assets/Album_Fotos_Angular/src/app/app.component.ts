@@ -20,9 +20,18 @@ export class AppComponent {
   ];
 
   constructor(public dialog: MatDialog){}
+
   openDialog(){
     const dialogRef = this.dialog.open(PostDialogComponent, {
       width:'600px'
     });
+    dialogRef.afterClosed().subscribe(
+      (result)=>{
+        if (result) {
+          console.log(result);
+          
+        }
+      }
+    )
   }
 }

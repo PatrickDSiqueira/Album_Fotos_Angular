@@ -1,41 +1,46 @@
 <div fxLayout="column" fxLayoutAlign="space-around left" >
     <div fxLayout="row" fxLayoutAlign="space-between">
         <mat-form-field fxFlex="50">
-            <input matInput placeholder="Seu nome">
+            <input matInput placeholder="Seu nome" [(ngModel)]="dados.post.name" >
             <mat-label>Digite seu nome</mat-label>
         </mat-form-field>
 
         <mat-form-field fxFlex="40">
-            <input matInput placeholder="Seu email">
+            <input matInput placeholder="Seu email" [(ngModel)]="dados.post.email">
             <mat-label>Digite seu email</mat-label>
         </mat-form-field>
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between">
         <mat-form-field fxFlex="50">
-            <input matInput placeholder="Titulo da Mensagem">
+            <input matInput placeholder="Titulo da Mensagem" [(ngModel)]="dados.post.title">
             <mat-label>Titulo da Mensagem</mat-label>
         </mat-form-field>
 
         <mat-form-field fxFlex="40">
-            <input matInput placeholder="SubTitulo da Mensagem">
+            <input matInput placeholder="SubTitulo da Mensagem" [(ngModel)]="dados.post.subtitle">
             <mat-label>SubTitulo da Mensagem"</mat-label>
         </mat-form-field>
     </div>
     <mat-form-field>
         <mat-label>Deixe aqui a sua Mensagem</mat-label>
-        <textarea matInput placeholder="Deixe aqui a sua Mensagem">
+        <textarea matInput placeholder="Deixe aqui a sua Mensagem" [(ngModel)]="dados.post.message">
         </textarea>
     </mat-form-field>
 </div>
-<input type="file" style="display: none;" #fileinput>
+<input type="file" style="display: none;" #fileinput (change)="changeFile($event)" >
 <button mat-stroked-button color="primary" (click)="fileinput.click()">
     <mat-icon>add_a_photo</mat-icon>
     Adicionar uma foto
 </button>
 
+<p *ngIf="filename!=''">
+    <strong>Arquivo:</strong> {{filename}} 
+    <mat-icon color="primary">done</mat-icon>
+</p>
+
 <br><br>
 
 <div style="text-align: center;">
-    <button mat-button color="primary">OK</button>
-    <button mat-button color="warn">Cancelar</button>
+    <button mat-button color="primary" (click)="save()">OK</button>
+    <button mat-button color="warn" (click)="cancel()">Cancelar</button>
 </div>

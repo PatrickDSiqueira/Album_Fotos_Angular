@@ -8,10 +8,27 @@ import { Post } from '../posts';
   styleUrls: ['./post-dialog.component.css']
 })
 export class PostDialogComponent {
-  private dados ={
-    post: new Post('','','','',''),
-    file : ''
+  protected filename : string ="";
+  protected dados = {
+    post: new Post('', '', '', '', ''),
+    file: null,
   }
   constructor(
-    public dialogRef: MatDialogRef<PostDialogComponent>) {}
+    public dialogRef: MatDialogRef<PostDialogComponent>
+  ) { }
+
+  public changeFile(event: any) {
+    this.dados.file = event.target.files[0];
+    this.filename = event.target.files[0].name;
+  }
+
+
+  save(){
+    this.dialogRef.close(this.dados)
+  }
+
+  cancel(){
+    this.dialogRef.close(null);
+  }
+
 }
