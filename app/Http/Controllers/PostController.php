@@ -26,6 +26,7 @@ class PostController extends Controller
         $post -> likes = 0;
 
         $post -> save();
+        return response($post, 200);
     }
 
     public function destroy($id)
