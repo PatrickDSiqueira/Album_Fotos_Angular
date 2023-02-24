@@ -1,11 +1,13 @@
 export class Post {
     constructor(
-        public nome:string,
-        public titulo:string,
-        public subtitulo:string,
+        public name:string,
+        public title:string,
+        public subtitle:string,
         public email:string,
-        public mensagem:string,
-        public arquivo:string,
+        public message:string,
+        public file:string,
+        public id?:number,
+        public likes?:number
     ){
 
     }
