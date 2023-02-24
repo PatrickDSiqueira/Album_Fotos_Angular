@@ -5,7 +5,7 @@ export class Post {
         public subtitle:string,
         public email:string,
         public message:string,
-        public file:string,
+        public file?:string,
         public id?:number,
         public likes?:number
     ){
