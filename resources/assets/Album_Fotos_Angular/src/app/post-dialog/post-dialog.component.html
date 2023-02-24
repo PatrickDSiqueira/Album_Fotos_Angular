@@ -1,0 +1,41 @@
+<div fxLayout="column" fxLayoutAlign="space-around left" >
+    <div fxLayout="row" fxLayoutAlign="space-between">
+        <mat-form-field fxFlex="50">
+            <input matInput placeholder="Seu nome">
+            <mat-label>Digite seu nome</mat-label>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="40">
+            <input matInput placeholder="Seu email">
+            <mat-label>Digite seu email</mat-label>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+        <mat-form-field fxFlex="50">
+            <input matInput placeholder="Titulo da Mensagem">
+            <mat-label>Titulo da Mensagem</mat-label>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="40">
+            <input matInput placeholder="SubTitulo da Mensagem">
+            <mat-label>SubTitulo da Mensagem"</mat-label>
+        </mat-form-field>
+    </div>
+    <mat-form-field>
+        <mat-label>Deixe aqui a sua Mensagem</mat-label>
+        <textarea matInput placeholder="Deixe aqui a sua Mensagem">
+        </textarea>
+    </mat-form-field>
+</div>
+<input type="file" style="display: none;" #fileinput>
+<button mat-stroked-button color="primary" (click)="fileinput.click()">
+    <mat-icon>add_a_photo</mat-icon>
+    Adicionar uma foto
+</button>
+
+<br><br>
+
+<div style="text-align: center;">
+    <button mat-button color="primary">OK</button>
+    <button mat-button color="warn">Cancelar</button>
+</div>
