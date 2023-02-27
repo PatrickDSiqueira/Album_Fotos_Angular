@@ -12,7 +12,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-button color="primary" (click)="like()">LIKE</button>
-      <button mat-button>SHARE</button>
+      <button mat-button color="accent" (click)="delete()">APAGAR</button>
       
       <mat-icon color="warning" *ngIf="post.likes!=undefined  &&  post.likes>0" [matBadge]="post.likes" matBadgePosition="above after" matBadgeColor="warn" matBadgeOverlap="false">favorite</mat-icon>
     </mat-card-actions>

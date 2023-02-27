@@ -19,7 +19,13 @@ export class PostComponent {
     if (this.post.id != undefined) {
       this.postService.like(this.post.id);
     }
+
     
+  }
+  delete() {
+    if (this.post.id != undefined) {
+      this.postService.delete(this.post.id);
+    }
   }
   
 }

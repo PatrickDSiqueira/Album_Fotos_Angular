@@ -53,14 +53,18 @@ export class PostService {
   like(id: number){
     this.http.get('/api/like/'+id).subscribe((response : any)=>{
       let p  = this.posts.find((p)=> p.id == id);
-
       if (p != undefined) {
-        p.likes = response.likes;
-        
+        p.likes = response.likes; 
       }
-      
     })
   }
 
-
+  delete(id:number){
+    this.http.delete('/api/' + id).subscribe((response : any)=>{
+      let i = this.posts.findIndex((p)=> p.id == id);
+      if (i >=0) {
+        this.posts.splice(i,1);
+      }
+    })
+  }
 }

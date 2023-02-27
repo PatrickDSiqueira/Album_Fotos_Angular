@@ -13,7 +13,7 @@
 
 <body>
 <app-root></app-root>
-<script src="{{asset('js/main.dd98324491cf1f78.js')}}" type="module"></script>
+<script src="{{asset('js/main.91ae775800e5e183.js')}}" type="module"></script>
 <script src="{{asset('js/polyfills.149b7fcd68f5bc0e.js')}}" type="module"></script>
 <script src="{{asset('js/runtime.4a8f2ce34fb98ca5.js')}}" type="module"></script>
 </body>
