@@ -22,7 +22,7 @@ class PostController extends Controller
         $post -> title = $request->title;
         $post -> subtitle= $request->subtitle;
         $post -> message= $request->message;
-        $post -> file = $request->$path;
+        $post -> file = $path;
         $post -> likes = 0;
 
         $post -> save();

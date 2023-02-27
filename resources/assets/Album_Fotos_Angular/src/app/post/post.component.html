@@ -4,15 +4,17 @@
       <mat-card-title>{{post.title}}</mat-card-title>
       <mat-card-subtitle>{{post.subtitle}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image src="../../../../../../storage/{{post.file}}" alt="Photo of a post">
     <mat-card-content>
       <p>
         {{post.message}}
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>LIKE</button>
+      <button mat-button color="primary" (click)="like()">LIKE</button>
       <button mat-button>SHARE</button>
+      
+      <mat-icon color="warning" *ngIf="post.likes!=undefined  &&  post.likes>0" [matBadge]="post.likes" matBadgePosition="above after" matBadgeColor="warn" matBadgeOverlap="false">favorite</mat-icon>
     </mat-card-actions>
   </mat-card>
   
